@@ -8,7 +8,7 @@ spec:
   source:
     repoURL: 'https://github.com/jakubsindelar/devops_zaverecna_prace.git'
     targetRevision: HEAD
-    path: 'manifests'
+    path: 'manifests'  # Adresář obsahující cronjob.yaml
   destination:
     server: 'https://kubernetes.default.svc'
     namespace: default
