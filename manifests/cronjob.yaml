@@ -1,9 +1,9 @@
-apiVersion: batch/v1beta1
+apiVersion: batch/v1
 kind: CronJob
 metadata:
   name: example-cronjob
 spec:
-  schedule: "0 19 * * *"  # Spustí se každý den v 19:00
+  schedule: "0 19 * * *"
   jobTemplate:
     spec:
       template:
@@ -13,4 +13,4 @@ spec:
             image: busybox
             command: ["echo", "Hello, Kubernetes!"]
           restartPolicy: OnFailure
-      backoffLimit: 3  # Maximálně 3 opakování v případě neúspěchu
+      backoffLimit: 3
