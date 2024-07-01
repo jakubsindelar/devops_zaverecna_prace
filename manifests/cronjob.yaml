@@ -9,8 +9,11 @@ spec:
       template:
         spec:
           containers:
-          - name: example
-            image: busybox
-            command: ["echo", "Hello, Kubernetes!"]
+          - name: my-app-container
+            image: 891377251179.dkr.ecr.eu-central-1.amazonaws.com/my-public-repo:latest
+            ports:
+            - containerPort: 80
           restartPolicy: OnFailure
+          imagePullSecrets:
+          - name: regcred  # Ujistěte se, že máte správný název tajného klíče
       backoffLimit: 3
